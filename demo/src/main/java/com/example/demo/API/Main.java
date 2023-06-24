@@ -16,12 +16,11 @@ public class Main {
     }
     @GetMapping("/greet")
     public GreetResponse greet(){
-        GreetResponse response = new GreetResponse(
+        return new GreetResponse(
                 "Hello",
                 List.of("Java","Python","Golang"),
                 new Person("Fabri",24)
         );
-        return response;
     }
     record Person(String name, int age){}
     record GreetResponse(
