@@ -11,21 +11,6 @@ import java.util.List;
 @RestController
 public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class,args);
-
+        SpringApplication.run(Main.class, args);
     }
-    @GetMapping("/greet")
-    public GreetResponse greet(){
-        return new GreetResponse(
-                "Hello",
-                List.of("Java","Python","Golang"),
-                new Person("Fabri",24)
-        );
-    }
-    record Person(String name, int age){}
-    record GreetResponse(
-            String greet,
-            List<String> favProgrammingLanguages,
-            Person person
-    ){ }
 }
